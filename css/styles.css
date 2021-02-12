@@ -16,6 +16,8 @@
   --background-footer-color: #2f303a;
   --footer-text-color: rgba(255, 255, 255, 0.6);
   --background-button-portfolio: #f5f4fa;
+
+  --card-set-gap: 30px;
 }
 
 body {
@@ -39,13 +41,33 @@ body {
   overflow: hidden;
 }
 
+.container {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  outline: 2px solid tomato;
+}
 /*шапка*/
 .page-header {
+  display: flex;
+  align-items: center;
+  min-height: 80px;
+
   letter-spacing: 0.02em;
   font-size: 14px;
   line-height: 1.14;
   font-weight: 500;
-  background-color: mediumpurple;
+}
+
+/*.page-header.container {
+  display: flex;
+  align-items: center;
+}*/
+.main-nav {
+  display: flex;
+  align-items: center;
 }
 
 /*лого*/
@@ -57,41 +79,75 @@ body {
   line-height: 1.2;
   letter-spacing: 0.03em;
 }
+
 .logo-header > span {
   color: var(--accent-color);
 }
+
 .logo-header.logo-footer {
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 
   color: var(--white-color);
 }
 
 /*навигация сайта*/
 .site-nav {
+  display: flex;
+  align-items: center;
   margin: 0;
+  margin-left: 93px;
+  padding: 0;
 }
+
+.site-nav .item + .item {
+  margin-left: 50px;
+}
+/*.site-nav .item:last-child {
+  margin-right: 0;
+}*/
+
+/*другой способ убрать справа марджин
+задать всем элементам марджин 50, кроме последнего*/
+/*.site-nav.item: not(: last-child) {
+  margin-right: 50px;
+}*/
 
 .site-nav a {
   color: var(--primary-text-color);
 }
+
 .site-nav a:hover,
 .site-nav a:focus {
   color: var(--accent-color);
 }
 
 /*подсветка активной страницы*/
-.site-nav .link.current {
+.site-nav .current {
   color: var(--accent-color);
+}
+
+.link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 
 /*обратная связь*/
 .contacts-nav {
-  padding: 0;
+  display: flex;
   margin: 0;
+  margin-left: auto;
+  padding: 0;
 }
+
+.contacts-nav .item + .item {
+  margin-left: 50px;
+}
+
 .contacts-nav a {
   color: var(--text-color);
 }
+
 .contacts-nav a:hover,
 .contacts-nav a:focus {
   color: var(--accent-color);
@@ -99,29 +155,28 @@ body {
 
 /*герой*/
 .hero {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 94px;
+
   background-color: #2f303a;
   color: var(--white-color);
   letter-spacing: 0.06em;
   text-align: center;
 }
+
 .hero-title {
   margin-top: 0;
   margin-bottom: 30px;
+  margin-right: auto;
+  margin-left: auto;
 
   color: var(--white-color);
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
   text-transform: uppercase;
-}
-
-.container {
-  width: 1170px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: auto;
-  margin-right: auto;
-  outline: 2px solid tomato;
 }
 
 /*кнопка героя*/
@@ -144,13 +199,13 @@ body {
 
 /*секции*/
 .section {
-  margin-bottom: 90px;
+  margin-bottom: 94px;
   letter-spacing: 0.03em;
   outline: 2px solid teal;
 }
 
-.section.no-margin {
-  margin: 0;
+.section.background {
+  background-color: var(--background-button-portfolio);
 }
 
 .section-title {
@@ -165,14 +220,28 @@ body {
 
 /*перечень особенностей*/
 .features-list {
+  display: flex;
+  flex-wrap: wrap;
   padding: 0;
   margin: 0;
 
   text-align: left;
+  background-color: orchid;
 }
+
+.features-list .item {
+  width: 270px;
+  background-color: honeydew;
+}
+
+.features-list .item + .item {
+  margin-left: 30px;
+}
+
 .features-list h3 {
   padding: 0;
-  margin: 0px 0px 10px 0px;
+  margin: 0;
+  margin-bottom: 10px;
 
   font-weight: 700;
   font-size: 14px;
@@ -190,8 +259,21 @@ body {
   line-height: 1.71;
 }
 
+*.flex {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+}
+
+.flex .item + .item {
+  margin-left: 30px;
+}
+
 /*список команды*/
 .team-list {
+  display: flex;
+  flex-wrap: wrap;
   padding: 0;
   margin: 0;
 
@@ -216,8 +298,21 @@ body {
   text-align: center;
 }
 
+.team-list .item + .item {
+  margin-left: 30px;
+}
+
+.team-content {
+  padding-top: var(--card-set-gap);
+  padding-bottom: var(--card-set-gap);
+}
 /*футер*/
 .footer {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 252px;
+
   background-color: var(--background-footer-color);
   color: var(--white-color);
   font-style: normal;
@@ -225,15 +320,30 @@ body {
   font-size: 14px;
   line-height: 1.7;
 }
+
 .footer p {
   margin: 0;
-  margin-top: 9px;
+  padding: 0;
+  padding-bottom: 9px;
 }
+
+.footer p:last-child {
+  padding-bottom: 0;
+}
+
 .footer .contacts {
+  padding: 0;
   color: var(--footer-text-color);
 }
 
-/*страница Портфолио*/
+.address-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 60px;
+  padding-bottom: 58px;
+}
+/*СТРАНИЦА ПОРТФОЛИО*/
 /*радио-кнопки на странице Портфолио*/
 .button-portfolio {
   border-radius: 4px;
@@ -258,14 +368,52 @@ body {
   background-color: var(--accent-color);
 }
 
+.button-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  margin-top: 94px;
+  margin-bottom: 34px;
+  padding: 0;
+  padding-bottom: 16px;
+}
+
+.button-portfolio {
+  display: flex;
+  margin-right: 8px;
+}
+.portfolio-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  margin-top: calc(-1 * var(--card-set-gap));
+  margin-left: calc(-1 * var(--card-set-gap));
+}
+
+.portfolio-item {
+  flex-basis: calc(100% / 3 - var(--card-set-gap));
+  margin-left: var(--card-set-gap);
+  margin-top: var(--card-set-gap);
+
+  outline: 1px solid red;
+}
+
 /*заголовки в списке портфолио*/
 .portfolio-title {
-  margin: 0px 0px 4px 0px;
+  margin: 0;
+  margin-bottom: 4px;
 
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
+}
+
+.pfl-content {
+  padding: 20px 24px;
 }
 /*текст в списке портфолио*/
 .portfolio-text {

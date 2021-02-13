@@ -372,8 +372,8 @@ body {
 }
 
 /*изменение цвета элемента контактов при наведении*/
-.footer a:hover,
-.footer a:focus {
+.hover a:hover,
+.hover a:focus {
   color: var(--accent-color);
 }
 

@@ -43,6 +43,7 @@ body {
   overflow: hidden;
 }
 
+/*контейнер*/
 .container {
   width: var(--width-container);
   padding-left: 15px;
@@ -52,30 +53,28 @@ body {
   outline: 2px solid tomato;
 }
 
-/*шапка*/
+/*---ШАПКА---*/
 .page-header {
-  border-bottom: 1px solid var(--header-border-color);
+  outline: 1px solid var(--header-border-color);
 
   letter-spacing: 0.02em;
   font-size: 14px;
   line-height: 1.14;
   font-weight: 500;
 }
+
 .flex-header {
   display: flex;
   align-items: center;
   min-height: 80px;
 }
-/*.page-header.container {
-  display: flex;
-  align-items: center;
-}*/
+
 .main-nav {
   display: flex;
   align-items: center;
 }
 
-/*лого*/
+/*ЛОГО*/
 .logo-header {
   color: var(--logo-color);
   font-family: Raleway, sans-serif;
@@ -89,13 +88,14 @@ body {
   color: var(--accent-color);
 }
 
+/*лого в футере*/
 .logo-header.logo-footer {
   margin-bottom: 22px;
 
   color: var(--white-color);
 }
 
-/*навигация сайта*/
+/*---НАВИГАЦИЯ САЙТА---*/
 .site-nav {
   display: flex;
   align-items: center;
@@ -107,9 +107,6 @@ body {
 .site-nav .item + .item {
   margin-left: 50px;
 }
-/*.site-nav .item:last-child {
-  margin-right: 0;
-}*/
 
 /*другой способ убрать справа марджин
 задать всем элементам марджин 50, кроме последнего*/
@@ -121,6 +118,7 @@ body {
   color: var(--primary-text-color);
 }
 
+/*изменение цвета элемента меню при наведении*/
 .site-nav a:hover,
 .site-nav a:focus {
   color: var(--accent-color);
@@ -131,6 +129,7 @@ body {
   color: var(--accent-color);
 }
 
+/*увеличение активной зоны для элементов меню*/
 .link {
   display: block;
   padding-top: 32px;
@@ -158,12 +157,12 @@ body {
   color: var(--accent-color);
 }
 
-/*герой*/
+/*---ГЕРОЙ---*/
 .hero {
+  display: flex;
   flex-direction: column;
-
-  padding-top: 200px;
-  padding-bottom: 200px;
+  justify-content: center;
+  align-items: center;
 
   max-width: 1600px;
   min-height: 600px;
@@ -209,13 +208,14 @@ body {
   text-align: center;
 }
 
-/*секции*/
+/*СЕКЦИИ*/
 .section {
   margin-bottom: 94px;
   letter-spacing: 0.03em;
   outline: 2px solid teal;
 }
 
+/*фон секции*/
 .section.background {
   background-color: var(--background-button-portfolio);
 }
@@ -230,19 +230,24 @@ body {
   text-align: center;
 }
 
-/*перечень особенностей*/
+/*---ПЕРЕЧЕНЬ ОСОБЕННОСТЕЙ---*/
 .features-list {
   display: flex;
   flex-wrap: wrap;
   padding: 0;
   margin: 0;
+  margin-top: calc(-1 * var(--card-set-gap));
+  margin-left: calc(-1 * var(--card-set-gap));
 
   text-align: left;
   background-color: orchid;
 }
 
-.features-list .item {
-  width: 270px;
+/*сетка*/
+.features-list > .item {
+  flex-basis: calc(100% / 4 - var(--card-set-gap));
+  margin-top: var(--card-set-gap);
+  margin-left: var(--card-set-gap);
   background-color: honeydew;
 }
 
@@ -250,6 +255,7 @@ body {
   margin-left: 30px;
 }
 
+/*заголовки*/
 .features-list h3 {
   padding: 0;
   margin: 0;
@@ -261,6 +267,7 @@ body {
   text-transform: uppercase;
 }
 
+/*текст*/
 .features-list p {
   padding: 0;
   margin: 0;
@@ -271,26 +278,40 @@ body {
   line-height: 1.71;
 }
 
-*.flex {
+/*---ЧЕМ ЗАНИМАЕМСЯ---*/
+
+.job-list {
   display: flex;
   flex-wrap: wrap;
   padding: 0;
   margin: 0;
+  margin-top: calc(-1 * var(--card-set-gap));
+  margin-left: calc(-1 * var(--card-set-gap));
 }
 
-.flex .item + .item {
-  margin-left: 30px;
+/*сетка*/
+.job-list > .item {
+  flex-basis: calc(100% / 3 - var(--card-set-gap));
+  margin-top: var(--card-set-gap);
+  margin-left: var(--card-set-gap);
+
+  outline: 1px solid red;
 }
 
-/*список команды*/
+/*---СПИСОК КОМАНДЫ---*/
+
 .team-list {
   display: flex;
   flex-wrap: wrap;
   padding: 0;
   margin: 0;
+  margin-top: calc(-1 * var(--card-set-gap));
+  margin-left: calc(-1 * var(--card-set-gap));
 
   line-height: 1.19;
 }
+
+/*заголовки*/
 .team-list h3 {
   margin-top: 0;
   margin-bottom: 10px;
@@ -300,9 +321,10 @@ body {
   text-align: center;
 }
 
+/*текст*/
 .team-list p {
-  padding: 0;
   margin: 0;
+  padding: 0;
 
   color: var(--text-color);
   font-weight: 400;
@@ -310,15 +332,23 @@ body {
   text-align: center;
 }
 
-.team-list .item + .item {
-  margin-left: 30px;
+/*сетка*/
+.team-list > .item {
+  flex-basis: calc(100% / 4 - var(--card-set-gap));
+  margin-top: var(--card-set-gap);
+  margin-left: var(--card-set-gap);
+
+  outline: 1px solid red;
 }
 
+/*обертка подписей под фото*/
 .team-content {
   padding-top: var(--card-set-gap);
   padding-bottom: var(--card-set-gap);
 }
-/*футер*/
+
+/*---ФУТЕР---*/
+
 .footer {
   max-width: 1600px;
   margin-left: auto;
@@ -348,16 +378,25 @@ body {
   color: var(--footer-text-color);
 }
 
-.address-flex {
+/*изменение цвета элемента контактов при наведении*/
+.footer a:hover,
+.footer a:focus {
+  color: var(--accent-color);
+}
+
+/*позиционирование адреса*/
+.flex-address {
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding-top: 60px;
   padding-bottom: 58px;
 }
-/*СТРАНИЦА ПОРТФОЛИО*/
-/*радио-кнопки на странице Портфолио*/
-.button-portfolio {
+
+/*---СТРАНИЦА ПОРТФОЛИО---*/
+
+/*радио-кнопка на странице Портфолио*/
+.button-pfl {
   border-radius: 4px;
   border-width: 0;
   padding: 6px 22px;
@@ -374,12 +413,14 @@ body {
   text-align: center;
 }
 
-.button-portfolio:hover,
-.button-portfolio:focus {
+/*изменение цвета кнопки при наведении*/
+.button-pfl:hover,
+.button-pfl:focus {
   color: var(--white-color);
   background-color: var(--accent-color);
 }
 
+/*список радио-кнопок*/
 .button-list {
   display: flex;
   flex-wrap: wrap;
@@ -392,11 +433,13 @@ body {
   padding-bottom: 16px;
 }
 
-.button-portfolio {
-  display: flex;
+/*расстояние между кнопками, кроме последней*/
+.button-item:not(:last-child) {
   margin-right: 8px;
 }
-.portfolio-list {
+
+/*примеры работ - портфолио*/
+.pfl-list {
   display: flex;
   flex-wrap: wrap;
   margin: 0;
@@ -405,7 +448,8 @@ body {
   margin-left: calc(-1 * var(--card-set-gap));
 }
 
-.portfolio-item {
+/*сетка*/
+.pfl-item {
   flex-basis: calc(100% / 3 - var(--card-set-gap));
   margin-left: var(--card-set-gap);
   margin-top: var(--card-set-gap);
@@ -414,7 +458,7 @@ body {
 }
 
 /*заголовки в списке портфолио*/
-.portfolio-title {
+.pfl-title {
   margin: 0;
   margin-bottom: 4px;
 
@@ -424,11 +468,13 @@ body {
   letter-spacing: 0.06em;
 }
 
+/*обертка подписей под фото*/
 .pfl-content {
   padding: 20px 24px;
 }
+
 /*текст в списке портфолио*/
-.portfolio-text {
+.pfl-text {
   margin: 0;
 
   color: var(--text-color);

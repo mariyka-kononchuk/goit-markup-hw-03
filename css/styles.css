@@ -209,7 +209,7 @@ body {
 
 /*СЕКЦИИ*/
 .section {
-  margin-bottom: 94px;
+  padding-bottom: 94px;
   letter-spacing: 0.03em;
 }
 
@@ -303,6 +303,10 @@ body {
   margin-left: calc(-1 * var(--card-set-gap));
 
   line-height: 1.19;
+}
+
+.team-container {
+  padding-top: 94px;
 }
 
 /*заголовки*/

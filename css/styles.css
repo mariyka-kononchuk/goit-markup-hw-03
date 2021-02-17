@@ -79,7 +79,7 @@ body {
   font-family: Raleway, sans-serif;
   font-weight: 700;
   font-size: 26px;
-  line-height: 1.2;
+  line-height: 1.192;
   letter-spacing: 0.03em;
 }
 
@@ -89,7 +89,7 @@ body {
 
 /*лого в футере*/
 .logo-header.logo-footer {
-  margin-bottom: 22px;
+  margin-bottom: 20px;
 
   color: var(--white-color);
 }
@@ -167,7 +167,6 @@ body {
   min-height: 600px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 94px;
 
   background-color: #2f303a;
   color: var(--white-color);
@@ -356,17 +355,17 @@ body {
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
-  line-height: 1.7;
+  line-height: 1.714;
 }
 
 .footer p {
   margin: 0;
   padding: 0;
-  padding-bottom: 9px;
+  margin-bottom: 9px;
 }
 
 .footer p:last-child {
-  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 .footer .contacts {
@@ -386,7 +385,7 @@ body {
   flex-direction: column;
   justify-content: center;
   padding-top: 60px;
-  padding-bottom: 58px;
+  padding-bottom: 60px;
 }
 
 /*---СТРАНИЦА ПОРТФОЛИО---*/
